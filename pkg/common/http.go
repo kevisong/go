@@ -25,7 +25,7 @@ type Req struct {
 	cookies []http.Cookie
 }
 
-var defaultReq = &Req{}
+var defaultReq = &Req{c: &http.Client{Timeout: time.Duration(30) * time.Second}}
 
 // NewHTTPRequester Factory
 func NewHTTPRequester(timeout int, headers map[string]string, cookies []http.Cookie) HTTPRequester {
@@ -36,24 +36,22 @@ func NewHTTPRequester(timeout int, headers map[string]string, cookies []http.Coo
 	}
 }
 
-// SetHeaders sets http request headers, which overwrites existing headers
-func (r *Req) SetHeaders(headers map[string]string) {
+// SetTimeout sets timeout, which overwrites existing timeout
+func (r *Req) SetTimeout(timeout int) *Req {
+	r.c = &http.Client{Timeout: time.Duration(timeout) * time.Second}
+	return r
+}
+
+// SetHeaders sets headers, which overwrites existing headers
+func (r *Req) SetHeaders(headers map[string]string) *Req {
 	r.headers = headers
+	return r
 }
 
 // SetCookies sets cookies, which overwrites existing cookies
-func (r *Req) SetCookies(cookies []http.Cookie) {
+func (r *Req) SetCookies(cookies []http.Cookie) *Req {
 	r.cookies = cookies
-}
-
-// Post by default requester
-func Post(url string, body []byte) ([]byte, error) {
-	return defaultReq.Post(url, body)
-}
-
-// Get by dfault requester
-func Get(url string) ([]byte, error) {
-	return defaultReq.Get(url)
+	return r
 }
 
 // Post implements HTTPRequester interface
@@ -94,6 +92,31 @@ func (r *Req) Get(url string) ([]byte, error) {
 
 	return r.readBody(resp)
 
+}
+
+// SetTimeout by default requester
+func SetTimeout(timeout int) *Req {
+	return defaultReq.SetTimeout(timeout)
+}
+
+// SetHeaders by default requester
+func SetHeaders(headers map[string]string) *Req {
+	return defaultReq.SetHeaders(headers)
+}
+
+// SetCookies by default requester
+func SetCookies(cookies []http.Cookie) *Req {
+	return defaultReq.SetCookies(cookies)
+}
+
+// Post by default requester
+func Post(url string, body []byte) ([]byte, error) {
+	return defaultReq.Post(url, body)
+}
+
+// Get by dfault requester
+func Get(url string) ([]byte, error) {
+	return defaultReq.Get(url)
 }
 
 func (r *Req) newReq(method, url string, body io.Reader) (*http.Request, error) {
