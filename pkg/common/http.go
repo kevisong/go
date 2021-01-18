@@ -25,6 +25,8 @@ type Req struct {
 	cookies []http.Cookie
 }
 
+var defaultReq = &Req{}
+
 // NewHTTPRequester Factory
 func NewHTTPRequester(timeout int, headers map[string]string, cookies []http.Cookie) HTTPRequester {
 	return &Req{
@@ -42,6 +44,16 @@ func (r *Req) SetHeaders(headers map[string]string) {
 // SetCookies sets cookies, which overwrites existing cookies
 func (r *Req) SetCookies(cookies []http.Cookie) {
 	r.cookies = cookies
+}
+
+// Post by default requester
+func Post(url string, body []byte) ([]byte, error) {
+	return defaultReq.Post(url, body)
+}
+
+// Get by dfault requester
+func Get(url string) ([]byte, error) {
+	return defaultReq.Get(url)
 }
 
 // Post implements HTTPRequester interface
