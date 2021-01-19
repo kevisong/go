@@ -29,10 +29,7 @@ type Config struct {
 	rRotationTime   time.Duration
 }
 
-// Check validates config
-func (c *Config) Check() error {
-
-	// Check level
+func (c *Config) checkLevel() error {
 	c.Level = strings.TrimSpace(c.Level)
 	if c.Level == "" {
 		c.Level = "info"
@@ -42,16 +39,16 @@ func (c *Config) Check() error {
 		return err
 	}
 	c.LogrusLevel = logrusLevel
-
-	// Check output path
+	return nil
+}
+func (c *Config) checkPath() {
 	c.Path = strings.TrimSpace(c.Path)
 	if c.Path == "" {
 		c.Path = "./"
 	}
+}
 
-	c.Filename = strings.TrimSpace(c.Filename)
-
-	// Check max age
+func (c *Config) checkMaxAge() error {
 	if c.MaxAge <= 0 {
 		c.MaxAge = 30 * 24 * 3600
 	}
@@ -60,8 +57,10 @@ func (c *Config) Check() error {
 		return err
 	}
 	c.rMaxAge = rMaxAge
+	return nil
+}
 
-	// Check rotation time
+func (c *Config) checkRotationTime() error {
 	if c.RotationTime <= 0 {
 		c.RotationTime = 24 * 3600
 	}
@@ -70,8 +69,10 @@ func (c *Config) Check() error {
 		return err
 	}
 	c.rRotationTime = rRotationTime
+	return nil
+}
 
-	// Check formatter
+func (c *Config) checkFormatter() error {
 	c.Formatter = strings.ToUpper(strings.TrimSpace(c.Formatter))
 	if c.Formatter == "" {
 		c.Formatter = "TEXT"
@@ -79,37 +80,64 @@ func (c *Config) Check() error {
 	if c.Formatter != "TEXT" && c.Formatter != "JSON" {
 		return fmt.Errorf("not a valid log formatter: %s", c.Formatter)
 	}
+	return nil
+}
 
+func (c *Config) checkTimestampFormat() {
 	c.TimestampFormat = strings.TrimSpace(c.TimestampFormat)
 	if c.TimestampFormat == "" {
 		c.TimestampFormat = "2006-01-02 15:04:05.000000"
 	}
+}
+
+// Check validates config
+func (c *Config) Check() error {
+
+	// Check level
+	err := c.checkLevel()
+	if err != nil {
+		return err
+	}
+
+	// Check output path
+	c.checkPath()
+
+	c.Filename = strings.TrimSpace(c.Filename)
+
+	// Check max age
+	err = c.checkMaxAge()
+	if err != nil {
+		return err
+	}
+
+	// Check rotation time
+	err = c.checkRotationTime()
+	if err != nil {
+		return err
+	}
+
+	// Check formatter
+	err = c.checkFormatter()
+	if err != nil {
+		return err
+	}
+
+	// Check timestamp format
+	c.checkTimestampFormat()
 
 	return nil
 
 }
 
-// Init initialize logrus to your weapon of choice
-func Init(c *Config) error {
-
-	err := c.Check()
-	if err != nil {
-		return err
-	}
-
+func setLogrus(c *Config) {
 	formatter := &logrus.TextFormatter{}
-	fmt.Println(c.TimestampFormat)
 	formatter.TimestampFormat = c.TimestampFormat
 	logrus.SetFormatter(formatter)
 	logrus.SetReportCaller(c.ReportCaller)
 	logrus.SetLevel(c.LogrusLevel)
+}
 
-	// Output to cli
-	if c.Filename == "" {
-		logrus.SetOutput(os.Stdout)
-		return nil
-	}
-
+func setRotatelogs(c *Config) error {
 	logRotate, err := rotatelogs.New(
 		fmt.Sprintf("%s.%%Y%%m%%d%%H%%M", fmt.Sprintf("%s/%s", c.Path, c.Filename)),
 		rotatelogs.WithLinkName(c.Filename),
@@ -124,4 +152,24 @@ func Init(c *Config) error {
 
 	logrus.SetOutput(logRotate)
 	return nil
+}
+
+// Init initialize logrus to your weapon of choice
+func Init(c *Config) error {
+
+	err := c.Check()
+	if err != nil {
+		return err
+	}
+
+	setLogrus(c)
+
+	// Output to cli
+	if c.Filename == "" {
+		logrus.SetOutput(os.Stdout)
+		return nil
+	}
+
+	// Output to file
+	return setRotatelogs(c)
 }
