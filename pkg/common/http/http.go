@@ -1,4 +1,4 @@
-package common
+package http
 
 import (
 	"bytes"
@@ -12,8 +12,8 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// HTTPRequester interface
-type HTTPRequester interface {
+// Requester interface
+type Requester interface {
 	Post(url string, body []byte) ([]byte, error)
 	Get(url string) ([]byte, error)
 }
@@ -28,7 +28,7 @@ type Req struct {
 var defaultReq = &Req{c: &http.Client{Timeout: time.Duration(30) * time.Second}}
 
 // NewHTTPRequester Factory
-func NewHTTPRequester(timeout int, headers map[string]string, cookies []http.Cookie) HTTPRequester {
+func NewHTTPRequester(timeout int, headers map[string]string, cookies []http.Cookie) Requester {
 	return &Req{
 		c:       &http.Client{Timeout: time.Duration(timeout) * time.Second},
 		headers: headers,
