@@ -153,7 +153,6 @@ func (r *Req) doRequest(req *http.Request) (*http.Response, error) {
 		log.Error(errorInfo)
 		return nil, err
 	}
-	defer resp.Body.Close()
 	return resp, nil
 }
 
@@ -164,5 +163,6 @@ func (r *Req) readBody(resp *http.Response) ([]byte, error) {
 		log.Error(errorInfo)
 		return nil, errors.New(errorInfo)
 	}
+	defer resp.Body.Close()
 	return bodyBytes, nil
 }
