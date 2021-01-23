@@ -1,31 +1,13 @@
 # go
 
-Go Libs
+> Go Libraries
 
-## http
+Implemented
 
-A simple http requester pkg.
-
-```go
-// Quick start
-resp, err := http.Get("url")
-if err != nil {
-    // err handling
-}
-fmt.Println(string(resp))
-
-// With headers
-resp, err := http.SetHeaders(map[string]string{}).Post("url", []byte{})
-if err != nil {
-    // err handling
-}
-fmt.Println(string(resp))
-```
-
-## log
-
-Log initialization pkg using Logrus.
-
-```go
-log.Init(&log.Config{Level: "info", Formatter: "json"})
-```
+- pkg
+  - common
+    - [x] `http`: [a simple http requester](./pkg/common/http/README.md)
+    - [x] `log`: [a logrus initiator](./pkg/common/log/README.md)
+    - [x] `wecom`: [WeCom group robot sender](./pkg/common/wecom/README.md)
+    - [x] `ssh`: [a simple ssh client](./pkg/common/ssh/README.md)
+    - [ ] `kafka`: a simple kafka producer and consumer
