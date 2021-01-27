@@ -14,16 +14,45 @@ var (
 	ErrChan chan *sarama.ConsumerError
 )
 
-func getConfig() *sarama.Config {
+func getPConfig() *sarama.Config {
+	config := sarama.NewConfig()
+	config.Producer.RequiredAcks = sarama.WaitForAll
+	config.Producer.Partitioner = sarama.NewRandomPartitioner
+	config.Producer.Return.Successes = true
+	return config
+}
+
+func getCConfig() *sarama.Config {
 	config := sarama.NewConfig()
 	config.Consumer.Return.Errors = true
 	config.Version = sarama.V0_11_0_2
 	return config
 }
 
+// Produce Produce
+func Produce(host, topic string, key string, value []byte, partition int32) {
+	producer, err := sarama.NewSyncProducer([]string{host}, getPConfig())
+	if err != nil {
+		logrus.Error(err)
+		return
+	}
+	defer producer.Close()
+	msg := &sarama.ProducerMessage{
+		Topic:     topic,
+		Partition: int32(partition),
+		Key:       sarama.StringEncoder(key),
+		Value:     sarama.ByteEncoder(value),
+	}
+	partition, _, err = producer.SendMessage(msg)
+	if err != nil {
+		logrus.Error(err)
+		return
+	}
+}
+
 // StartConsumer StartConsumer
 func StartConsumer(host, topic string, partition int32, offset int64, interval int) {
-	consumer, err := sarama.NewConsumer([]string{host}, getConfig())
+	consumer, err := sarama.NewConsumer([]string{host}, getCConfig())
 	if err != nil {
 		logrus.Error(err)
 		return
