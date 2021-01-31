@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/olivere/elastic"
-	"github.com/unknwon/log"
+	log "github.com/sirupsen/logrus"
 )
 
 // Document interface
