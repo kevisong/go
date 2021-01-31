@@ -136,7 +136,7 @@ func Index(idx string, docs []Document) error {
 	}
 
 	if !exists {
-		return fmt.Errorf("index %s doesn't exists", index)
+		return fmt.Errorf("index %s doesn't exists", idx)
 	}
 
 	for len(docs) > 0 {
