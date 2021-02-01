@@ -7,6 +7,8 @@ require (
 	github.com/jonboulle/clockwork v0.2.2 // indirect
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.4 // indirect
+	github.com/mailru/easyjson v0.7.6 // indirect
+	github.com/olivere/elastic v6.2.35+incompatible
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sirupsen/logrus v1.7.0
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a

@@ -3,17 +3,20 @@ package wecom
 import (
 	"encoding/json"
 
-	"github.com/KEVISONG/go/pkg/common/http"
+	"github.com/KEVISONG/go/common/http"
 )
 
+// Robot interface
 type Robot interface{}
 
-type WeComRobot struct {
+// WCRobot WeComRobot
+type WCRobot struct {
 	Webhook string
 }
 
+// NewWeComRobot factory
 func NewWeComRobot(webhook string) (r Robot) {
-	return &WeComRobot{webhook}
+	return &WCRobot{webhook}
 }
 
 func send(webhook, content string) ([]byte, error) {
@@ -28,10 +31,12 @@ func send(webhook, content string) ([]byte, error) {
 	return resp, nil
 }
 
-func (w *WeComRobot) Send(content string) ([]byte, error) {
+// Send sends the content
+func (w *WCRobot) Send(content string) ([]byte, error) {
 	return send(w.Webhook, content)
 }
 
+// Send sends the content
 func Send(webhook, content string) ([]byte, error) {
 	return send(webhook, content)
 }

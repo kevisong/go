@@ -1,6 +1,6 @@
 # log
 
-Log initialization pkg for [logrus](https://github.com/sirupsen/logrus).
+log initialization lib for [logrus](https://github.com/sirupsen/logrus).
 
 ```go
 log.Init(&log.Config{Level: "info", Formatter: "json"})

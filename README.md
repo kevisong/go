@@ -1,15 +1,12 @@
 # go
 
-> Go Libraries
+> Go Libraries for Productivity
 
-Implemented
-
-- pkg
-  - common
-    - [x] `http`: [a simple http requester](./pkg/common/http/)
-    - [x] `log`: [a logrus initiator](./pkg/common/log/)
-    - [x] `wecom`: [WeCom group robot sender](./pkg/common/wecom/)
-    - [x] `ssh`: [a simple ssh client](./pkg/common/ssh/)
-    - [x] `kafka`: [a simple kafka producer and consumer](./pkg/common/kafka/)
-    - [ ] `elasticsearch`: [elastic client](.)
-    - [ ] `encryption`: [encryption utils](.)
+- `./common`
+  - [x] `http`: [a simple http requester](./common/http/)
+  - [x] `log`: [a logrus initiator](./common/log/)
+  - [x] `wecom`: [WeCom group robot sender](./common/wecom/)
+  - [x] `ssh`: [a simple ssh client](./common/ssh/)
+  - [x] `kafka`: [a simple kafka producer and consumer](./common/kafka/)
+  - [x] `es`: [elastic client](./common/es/)
+  - [ ] `encrypt`: [encryption utilities](.)
