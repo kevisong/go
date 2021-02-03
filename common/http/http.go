@@ -25,7 +25,11 @@ type Req struct {
 	cookies []http.Cookie
 }
 
-var defaultReq = &Req{c: &http.Client{Timeout: time.Duration(30) * time.Second}}
+var defaultReq *Req
+
+func init() {
+	defaultReq = &Req{c: &http.Client{Timeout: time.Duration(30) * time.Second}}
+}
 
 // NewHTTPRequester Factory
 func NewHTTPRequester(timeout int, headers map[string]string, cookies []http.Cookie) Requester {
