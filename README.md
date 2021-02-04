@@ -9,4 +9,4 @@
   - [x] `ssh`: [a simple ssh client](./common/ssh/)
   - [x] `kafka`: [a simple kafka producer and consumer](./common/kafka/)
   - [x] `es`: [elastic client](./common/es/)
-  - [ ] `encrypt`: [encryption utilities](.)
+  - [x] `encrypt`: [encryption utilities](./common/encrypt/README.md)
