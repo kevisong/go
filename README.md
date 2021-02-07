@@ -11,3 +11,7 @@
   - [x] `es`: [elastic client](./common/es/)
   - [x] `encrypt`: [encryption utilities](./common/encrypt/README.md)
   - [ ] `encoding`: [encoding](.)
+  - [ ] `k8s`: [k8s](.)
+  - [ ] `mysql`: [mysql](.)
+  - [ ] `mongodb`: [mongodb](.)
+  - [ ] `redis`: [redis](.)
