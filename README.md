@@ -15,3 +15,4 @@
   - [ ] `mysql`: [mysql](.)
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
+  - [ ] `string`: [string](.)
