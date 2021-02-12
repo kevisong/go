@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/KEVISONG/go/log"
+	"github.com/KEVISONG/go/common/log"
 )
 
 func init() {
