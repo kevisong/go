@@ -3,11 +3,13 @@ package encypt
 import (
 	"crypto/aes"
 	"crypto/cipher"
+	"crypto/md5"
 	"crypto/rand"
 	"crypto/sha256"
 	"encoding/hex"
 	"errors"
 	"io"
+	"strings"
 
 	"golang.org/x/crypto/pbkdf2"
 )
@@ -102,4 +104,22 @@ func EncodePassword(password string, salt string) (string, error) {
 // Key needs to be 32bytes
 func encryptionKeyToBytes(secret, salt string) ([]byte, error) {
 	return pbkdf2.Key([]byte(secret), []byte(salt), 10000, 32, sha256.New), nil
+}
+
+// Md5Sum calculates the md5sum of a stream
+func Md5Sum(reader io.Reader) (string, error) {
+	var returnMD5String string
+	hash := md5.New()
+	if _, err := io.Copy(hash, reader); err != nil {
+		return returnMD5String, err
+	}
+	hashInBytes := hash.Sum(nil)[:16]
+	returnMD5String = hex.EncodeToString(hashInBytes)
+	return returnMD5String, nil
+}
+
+// Md5SumString calculates the md5sum of a string
+func Md5SumString(input string) (string, error) {
+	buffer := strings.NewReader(input)
+	return Md5Sum(buffer)
 }
