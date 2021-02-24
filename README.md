@@ -16,3 +16,4 @@
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
   - [ ] `string`: [string](.)
+  - [ ] `ping`: [ping](.)
