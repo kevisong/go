@@ -16,4 +16,4 @@
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
   - [ ] `string`: [string](.)
-  - [ ] `ping`: [ping](.)
+  - [ ] `pinger`: [pinger](./common/pinger/)
