@@ -9,7 +9,7 @@
   - [x] `ssh`: [a simple ssh client](./common/ssh/)
   - [x] `kafka`: [a simple kafka producer and consumer](./common/kafka/)
   - [x] `es`: [elastic client](./common/es/)
-  - [x] `encrypt`: [encryption utilities](./common/encrypt/README.md)
+  - [x] `encrypt`: [encryption utilities](./common/encrypt/)
   - [ ] `encoding`: [encoding](./common/encoding/)
   - [ ] `k8s`: [k8s](.)
   - [ ] `mysql`: [mysql](.)
