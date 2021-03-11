@@ -17,3 +17,4 @@
   - [ ] `redis`: [redis](.)
   - [ ] `string`: [string](.)
   - [ ] `pinger`: [pinger](./common/pinger/)
+  - [ ] `cert`: [cert](.)
