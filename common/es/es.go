@@ -145,6 +145,7 @@ func Index(idx string, docs []Document) error {
 			docs = docs[10000:]
 		} else {
 			index(idx, docs, len(docs))
+			docs = docs[len(docs):]
 		}
 	}
 
