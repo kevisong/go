@@ -5,6 +5,15 @@ import (
 	"gorm.io/gorm"
 )
 
-func conn(dsn string) (*gorm.DB, error) {
-	return gorm.Open(mysql.Open(dsn), &gorm.Config{})
+var (
+	// DSN is data source name
+	DSN string
+)
+
+func Init(dsn string) {
+	DSN = dsn
+}
+
+func conn() (*gorm.DB, error) {
+	return gorm.Open(mysql.Open(DSN), &gorm.Config{})
 }
