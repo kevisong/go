@@ -130,9 +130,17 @@ func (c *Config) Check() error {
 }
 
 func setLogrus(c *Config) {
-	formatter := &logrus.TextFormatter{}
-	formatter.TimestampFormat = c.TimestampFormat
-	logrus.SetFormatter(formatter)
+	switch c.Formatter {
+	case "TEXT":
+		formatter := &logrus.TextFormatter{}
+		formatter.TimestampFormat = c.TimestampFormat
+		logrus.SetFormatter(formatter)
+
+	case "JSON":
+		formatter := &logrus.JSONFormatter{}
+		formatter.TimestampFormat = c.TimestampFormat
+		logrus.SetFormatter(formatter)
+	}
 	logrus.SetReportCaller(c.ReportCaller)
 	logrus.SetLevel(c.LogrusLevel)
 }
