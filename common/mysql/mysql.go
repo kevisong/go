@@ -6,14 +6,17 @@ import (
 )
 
 var (
-	// DSN is data source name
-	DSN string
+	// defaultDSN is the default data source name
+	defaultDSN string
 )
 
 func Init(dsn string) {
-	DSN = dsn
+	defaultDSN = dsn
 }
 
-func conn() (*gorm.DB, error) {
-	return gorm.Open(mysql.Open(DSN), &gorm.Config{})
+func Conn(dsn string) (*gorm.DB, error) {
+	if dsn == "" {
+		return gorm.Open(mysql.Open(defaultDSN), &gorm.Config{})
+	}
+	return gorm.Open(mysql.Open(dsn), &gorm.Config{})
 }
