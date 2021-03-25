@@ -12,7 +12,7 @@
   - [x] `encrypt`: [encryption utilities](./common/encrypt/)
   - [ ] `encoding`: [encoding](./common/encoding/)
   - [ ] `k8s`: [k8s](.)
-  - [ ] `mysql`: [mysql](.)
+  - [ ] `mysql`: [mysql](./common/mysql/)
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
   - [ ] `string`: [string](.)
