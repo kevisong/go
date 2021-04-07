@@ -1,5 +1,7 @@
 # limiter
 
+Based on [https://github.com/influxdata/telegraf/blob/master/internal/limiter/limiter.go](https://github.com/influxdata/telegraf/blob/master/internal/limiter/limiter.go)
+
 ## Usage
 
 ```go
