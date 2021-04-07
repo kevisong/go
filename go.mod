@@ -14,4 +14,6 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
 	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f // indirect
+	gorm.io/driver/mysql v1.0.5
+	gorm.io/gorm v1.21.3
 )

@@ -60,7 +60,6 @@ func (r *Req) SetCookies(cookies []http.Cookie) *Req {
 
 // Post implements HTTPRequester interface
 func (r *Req) Post(url string, body []byte) ([]byte, error) {
-
 	req, err := r.newReq("POST", url, bytes.NewBuffer(body))
 	if err != nil {
 		return nil, err
@@ -93,7 +92,6 @@ func (r *Req) Get(url string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	return r.readBody(resp)
 
 }

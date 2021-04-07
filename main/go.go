@@ -5,9 +5,8 @@ import (
 )
 
 func init() {
-	log.Init(&log.Config{Level: "info", Formatter: "json", ReportCaller: true})
+	log.Init(&log.Config{Level: "info", Formatter: "text", ReportCaller: true})
 }
 
 func main() {
-
 }
