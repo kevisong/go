@@ -19,3 +19,4 @@
   - [ ] `string`: [string](.)
   - [ ] `pinger`: [pinger](./common/pinger/)
   - [ ] `cert`: [cert](.)
+  - [ ] `re`: [re](.)
