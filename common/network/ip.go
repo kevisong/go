@@ -3,6 +3,7 @@ package network
 import (
 	"encoding/json"
 	"io/ioutil"
+	"net"
 	"net/http"
 )
 
@@ -39,4 +40,9 @@ func GetPublicIPInfo() (IPInfo, error) {
 	}
 	return ipInfo, nil
 
+}
+
+// GetIPAddrs gets private ip information from net interface
+func GetIPAddrs() ([]net.Addr, error) {
+	return net.InterfaceAddrs()
 }
