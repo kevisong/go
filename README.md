@@ -14,7 +14,7 @@
   - [x] `network`: [network](./common/network/)
   - [ ] `limiter`: [limiter](.)
   - [ ] `k8s`: [k8s](.)
-  - [ ] `mysql`: [mysql](./common/mysql/)
+  - [x] `mysql`: [mysql](./common/mysql/)
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
   - [ ] `string`: [string](.)
