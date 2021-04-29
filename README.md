@@ -14,10 +14,11 @@
   - [x] `network`: [network](./common/network/)
   - [x] `limiter`: [limiter](./common/limiter/)
   - [x] `mysql`: [mysql](./common/mysql/)
+  - [x] `re`: [re](./common/re/)
   - [ ] `k8s`: [k8s](.)
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
   - [ ] `string`: [string](.)
   - [ ] `pinger`: [pinger](./common/pinger/)
   - [ ] `cert`: [cert](.)
-  - [ ] `re`: [re](.)
+
