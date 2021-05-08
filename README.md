@@ -15,7 +15,7 @@
   - [x] `limiter`: [limiter](./common/limiter/)
   - [x] `mysql`: [mysql](./common/mysql/)
   - [x] `re`: [re](./common/re/)
-  - [ ] `mail`: [mail](.)
+  - [ ] `mail`: [mail](./common/mail/)
   - [ ] `k8s`: [k8s](.)
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
