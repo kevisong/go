@@ -8,7 +8,7 @@
   - [x] `wecom`: [WeCom group robot sender](./common/wecom/)
   - [x] `ssh`: [a simple ssh client](./common/ssh/)
   - [x] `kafka`: [a simple kafka producer and consumer](./common/kafka/)
-  - [x] `es`: [elastic client](./common/es/)
+  - [x] `elasticsearch`: [elastic client](./common/es/)
   - [x] `encrypt`: [encryption utilities](./common/encrypt/)
   - [x] `encoding`: [encoding](./common/encoding/)
   - [x] `network`: [network](./common/network/)
