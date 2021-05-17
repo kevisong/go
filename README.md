@@ -22,4 +22,4 @@
   - [ ] `string`: [string](.)
   - [ ] `pinger`: [pinger](./common/pinger/)
   - [ ] `cert`: [cert](.)
-  - [ ] `algorithms`: [algorithms](.)
+  - [ ] `algorithms`: [algorithms](./common/algorithms/)
