@@ -36,8 +36,8 @@ func SHA256(reader io.Reader) (string, error) {
 	return hex.EncodeToString(sum[:]), nil
 }
 
-// SHA256SumSumString calculates the MD5 of a string
-func SHA256SumSumString(input string) (string, error) {
+// SHA256SumString calculates the MD5 of a string
+func SHA256SumString(input string) (string, error) {
 	buffer := strings.NewReader(input)
 	return SHA256(buffer)
 }
