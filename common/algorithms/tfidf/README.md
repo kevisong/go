@@ -13,3 +13,16 @@
 **TF-IDF** = `TF * IDF`
 
 `Cosine Similarity` = cos(( A \* B ) / ( |A| * |B| ) )
+
+## Usage
+
+```go
+t := tfidf.NewTFIDF()
+
+t.AddDocs("hi there", "how are you", "how do you do")
+
+doc := "where are you"
+weight := t.Cal(doc)
+
+fmt.Printf("weight of %s is %+v.\n", doc, weight)
+```
