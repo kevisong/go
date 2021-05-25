@@ -172,3 +172,20 @@ func (t *TFIDF) cal(terms []string) map[string]float64 {
 	return tfidfs
 
 }
+
+// Query returns the calculated similarities of all
+// the document in the corpus with the given doc.
+func (t *TFIDF) Query(doc string) map[string]float64 {
+
+	sims := map[string]float64{}
+
+	tfidfs := t.cal(t.t.Exec(doc))
+
+	for id, document := range t.Corpus.Documents {
+		sim := utils.Cosine(tfidfs, document.tfidfs)
+		sims[id] = sim
+	}
+
+	return sims
+
+}
