@@ -10,13 +10,23 @@ var (
 	defaultDSN string
 )
 
+// Init Init
 func Init(dsn string) {
 	defaultDSN = dsn
 }
 
-func Conn(dsn string) (*gorm.DB, error) {
+// Connect Connect
+func Connect(dsn string) (*gorm.DB, error) {
 	if dsn == "" {
 		return gorm.Open(mysql.Open(defaultDSN), &gorm.Config{})
 	}
 	return gorm.Open(mysql.Open(dsn), &gorm.Config{})
+}
+
+// ConnectWithConfig ConnectWithConfig
+func ConnectWithConfig(dsn string, config *gorm.Config) (*gorm.DB, error) {
+	if dsn == "" {
+		return gorm.Open(mysql.Open(defaultDSN), config)
+	}
+	return gorm.Open(mysql.Open(dsn), config)
 }
