@@ -1,6 +1,6 @@
 # go
 
-> Go Libraries for Productivity
+> Go Codebase
 
 - `./common`
   - [x] `http`: [a simple http requester](./common/http/)
@@ -15,11 +15,10 @@
   - [x] `limiter`: [limiter](./common/limiter/)
   - [x] `mysql`: [mysql](./common/mysql/)
   - [x] `re`: [re](./common/re/)
-  - [ ] `mail`: [mail](./common/mail/)
+  - [x] `mail`: [mail](./common/mail/)
+  - [x] `algorithms`: [algorithms](./common/algorithms/)
+  - [x] `pinger`: [pinger](./common/pinger/)
   - [ ] `k8s`: [k8s](.)
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
-  - [ ] `string`: [string](.)
-  - [ ] `pinger`: [pinger](./common/pinger/)
   - [ ] `cert`: [cert](.)
-  - [ ] `algorithms`: [algorithms](./common/algorithms/)
