@@ -19,7 +19,7 @@
   - [x] `algorithms`: [algorithms](./common/algorithms/)
   - [x] `pinger`: [pinger](./common/pinger/)
   - [x] `pointer`: [pointer](./common/pointer/)
-  - [ ] `gRPC`: [gRPC](.)
+  - [ ] `gRPC`: [gRPC](./common/grpc/)
   - [ ] `k8s`: [k8s](.)
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
