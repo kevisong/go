@@ -19,12 +19,11 @@ import (
 
 // Config for log config
 type Config struct {
-	Level        string `json:"level" yaml:"level"`                 // Log level
-	Path         string `json:"path" yaml:"path"`                   // Log path
-	Filename     string `json:"filename" yaml:"filename"`           // Log filename
-	MaxAge       int    `json:"max_age" yaml:"max_age"`             // Log store time
-	RotationTime int    `json:"rotation_time" yaml:"rotation_time"` // Log rotation time
-	//Formatter       string `json:"formatter" yaml:"formatter"`               // Log formatter type
+	Level           string `json:"level" yaml:"level"`                       // Log level
+	Path            string `json:"path" yaml:"path"`                         // Log path
+	Filename        string `json:"filename" yaml:"filename"`                 // Log filename
+	MaxAge          int    `json:"max_age" yaml:"max_age"`                   // Log store time
+	RotationTime    int    `json:"rotation_time" yaml:"rotation_time"`       // Log rotation time
 	ReportCaller    bool   `json:"report_caller" yaml:"report_caller"`       // Report caller func and line number
 	TimestampFormat string `json:"timestamp_format" yaml:"timestamp_format"` // Timestamp Format
 	LogrusLevel     logrus.Level
@@ -75,17 +74,6 @@ func (c *Config) checkRotationTime() error {
 	return nil
 }
 
-// func (c *Config) checkFormatter() error {
-// 	c.Formatter = strings.ToUpper(strings.TrimSpace(c.Formatter))
-// 	if c.Formatter == "" {
-// 		c.Formatter = "TEXT"
-// 	}
-// 	if c.Formatter != "TEXT" && c.Formatter != "JSON" {
-// 		return fmt.Errorf("not a valid log formatter: %s", c.Formatter)
-// 	}
-// 	return nil
-// }
-
 func (c *Config) checkTimestampFormat() {
 	c.TimestampFormat = strings.TrimSpace(c.TimestampFormat)
 	if c.TimestampFormat == "" {
@@ -119,12 +107,6 @@ func (c *Config) Check() error {
 		return err
 	}
 
-	// // Check formatter
-	// err = c.checkFormatter()
-	// if err != nil {
-	// 	return err
-	// }
-
 	// Check timestamp format
 	c.checkTimestampFormat()
 
@@ -150,18 +132,6 @@ func setHooks() {
 }
 
 func setLogrus(c *Config) {
-
-	// switch c.Formatter {
-	// case "TEXT":
-	// 	formatter := &logrus.TextFormatter{}
-	// 	formatter.TimestampFormat = c.TimestampFormat
-	// 	logrus.SetFormatter(formatter)
-
-	// case "JSON":
-	// 	formatter := &logrus.JSONFormatter{}
-	// 	formatter.TimestampFormat = c.TimestampFormat
-	// 	logrus.SetFormatter(formatter)
-	// }
 
 	logrus.SetFormatter(newFormatter())
 	logrus.SetOutput(colorable.NewColorableStdout())
