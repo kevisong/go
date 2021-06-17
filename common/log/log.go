@@ -7,21 +7,24 @@ import (
 	"time"
 
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
+	"github.com/mattn/go-colorable"
+	"github.com/tietang/go-utils"
+	lpf "github.com/x-cray/logrus-prefixed-formatter"
 
 	"github.com/sirupsen/logrus"
 )
 
-// Logrus initialization pkg
+// logrus initialization pkg
 // github.com/sirupsen/logrus
 
 // Config for log config
 type Config struct {
-	Level           string `json:"level" yaml:"level"`                       // Log level
-	Path            string `json:"path" yaml:"path"`                         // Log path
-	Filename        string `json:"filename" yaml:"filename"`                 // Log filename
-	MaxAge          int    `json:"max_age" yaml:"max_age"`                   // Log store time
-	RotationTime    int    `json:"rotation_time" yaml:"rotation_time"`       // Log rotation time
-	Formatter       string `json:"formatter" yaml:"formatter"`               // Log formatter type
+	Level        string `json:"level" yaml:"level"`                 // Log level
+	Path         string `json:"path" yaml:"path"`                   // Log path
+	Filename     string `json:"filename" yaml:"filename"`           // Log filename
+	MaxAge       int    `json:"max_age" yaml:"max_age"`             // Log store time
+	RotationTime int    `json:"rotation_time" yaml:"rotation_time"` // Log rotation time
+	//Formatter       string `json:"formatter" yaml:"formatter"`               // Log formatter type
 	ReportCaller    bool   `json:"report_caller" yaml:"report_caller"`       // Report caller func and line number
 	TimestampFormat string `json:"timestamp_format" yaml:"timestamp_format"` // Timestamp Format
 	LogrusLevel     logrus.Level
@@ -72,16 +75,16 @@ func (c *Config) checkRotationTime() error {
 	return nil
 }
 
-func (c *Config) checkFormatter() error {
-	c.Formatter = strings.ToUpper(strings.TrimSpace(c.Formatter))
-	if c.Formatter == "" {
-		c.Formatter = "TEXT"
-	}
-	if c.Formatter != "TEXT" && c.Formatter != "JSON" {
-		return fmt.Errorf("not a valid log formatter: %s", c.Formatter)
-	}
-	return nil
-}
+// func (c *Config) checkFormatter() error {
+// 	c.Formatter = strings.ToUpper(strings.TrimSpace(c.Formatter))
+// 	if c.Formatter == "" {
+// 		c.Formatter = "TEXT"
+// 	}
+// 	if c.Formatter != "TEXT" && c.Formatter != "JSON" {
+// 		return fmt.Errorf("not a valid log formatter: %s", c.Formatter)
+// 	}
+// 	return nil
+// }
 
 func (c *Config) checkTimestampFormat() {
 	c.TimestampFormat = strings.TrimSpace(c.TimestampFormat)
@@ -116,11 +119,11 @@ func (c *Config) Check() error {
 		return err
 	}
 
-	// Check formatter
-	err = c.checkFormatter()
-	if err != nil {
-		return err
-	}
+	// // Check formatter
+	// err = c.checkFormatter()
+	// if err != nil {
+	// 	return err
+	// }
 
 	// Check timestamp format
 	c.checkTimestampFormat()
@@ -129,20 +132,43 @@ func (c *Config) Check() error {
 
 }
 
-func setLogrus(c *Config) {
-	switch c.Formatter {
-	case "TEXT":
-		formatter := &logrus.TextFormatter{}
-		formatter.TimestampFormat = c.TimestampFormat
-		logrus.SetFormatter(formatter)
+func newFormatter() *lpf.TextFormatter {
+	formatter := &lpf.TextFormatter{}
+	formatter.ForceColors = false
+	formatter.DisableColors = true
+	formatter.ForceFormatting = true
+	formatter.FullTimestamp = true
+	formatter.TimestampFormat = "2006-01-02.15:04:05.000000"
+	return formatter
+}
 
-	case "JSON":
-		formatter := &logrus.JSONFormatter{}
-		formatter.TimestampFormat = c.TimestampFormat
-		logrus.SetFormatter(formatter)
-	}
+func setHooks() {
+	hook := utils.NewLineNumLogrusHook()
+	hook.EnableFileNameLog = true
+	hook.EnableFuncNameLog = true
+	logrus.AddHook(hook)
+}
+
+func setLogrus(c *Config) {
+
+	// switch c.Formatter {
+	// case "TEXT":
+	// 	formatter := &logrus.TextFormatter{}
+	// 	formatter.TimestampFormat = c.TimestampFormat
+	// 	logrus.SetFormatter(formatter)
+
+	// case "JSON":
+	// 	formatter := &logrus.JSONFormatter{}
+	// 	formatter.TimestampFormat = c.TimestampFormat
+	// 	logrus.SetFormatter(formatter)
+	// }
+
+	logrus.SetFormatter(newFormatter())
+	logrus.SetOutput(colorable.NewColorableStdout())
 	logrus.SetReportCaller(c.ReportCaller)
 	logrus.SetLevel(c.LogrusLevel)
+
+	setHooks()
 }
 
 func setRotatelogs(c *Config) error {
