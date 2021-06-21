@@ -24,3 +24,4 @@
   - [ ] `mongodb`: [mongodb](.)
   - [ ] `redis`: [redis](.)
   - [ ] `cert`: [cert](.)
+  - [ ] `enum`: [enum](.)
