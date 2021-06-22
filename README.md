@@ -25,3 +25,4 @@
   - [ ] `redis`: [redis](.)
   - [ ] `cert`: [cert](.)
   - [ ] `enum`: [enum](.)
+  - [ ] `flag`: [flag](.)
