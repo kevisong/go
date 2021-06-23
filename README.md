@@ -1,28 +1,36 @@
 # go
 
-> Go Codebase
+> Go codebase that keeps going
 
-- `./common`
-  - [x] `http`: [a simple http requester](./common/http/)
-  - [x] `log`: [a logrus initiator](./common/log/)
-  - [x] `wecom`: [WeCom group robot sender](./common/wecom/)
-  - [x] `ssh`: [a simple ssh client](./common/ssh/)
-  - [x] `kafka`: [a simple kafka producer and consumer](./common/kafka/)
-  - [x] `elasticsearch`: [elastic client](./common/es/)
-  - [x] `encrypt`: [encryption utilities](./common/encrypt/)
-  - [x] `encoding`: [encoding](./common/encoding/)
-  - [x] `network`: [network](./common/network/)
-  - [x] `limiter`: [rate limiter](./common/limiter/)
-  - [x] `mysql`: [mysql](./common/mysql/)
-  - [x] `re`: [regular expressions](./common/re/)
-  - [x] `mail`: [mail client](./common/mail/)
-  - [x] `algorithms`: [algorithm implementations](./common/algorithms/)
-  - [x] `pinger`: [pinger](./common/pinger/)
-  - [x] `pointer`: [pointer utilities](./common/pointer/)
-  - [ ] `grpc`: [grpc code base](./common/grpc/)
-  - [ ] `k8s`: [k8s](.)
-  - [ ] `mongodb`: [mongodb](.)
-  - [ ] `redis`: [redis](.)
-  - [ ] `cert`: [cert](.)
-  - [ ] `enum`: [enum](.)
-  - [ ] `flag`: [flag](.)
+`pkg`
+
+Out of the box code utilites for importing and using.
+
+- [x] [`http`](./pkg/http/): A simple http requester.
+- [x] [`log`](./pkg/log/): A logrus initiator.
+- [x] [`wecom`](./pkg/wecom/): WeCom group robot message sender.
+- [x] [`ssh`](./pkg/ssh/): Simple ssh client.
+- [x] [`kafka`](./pkg/kafka/): A simple kafka producer and consumer.
+- [x] [`elasticsearch`](./pkg/es/): Elasticsearch client.
+- [x] [`cryptox`](./pkg/cryptox/): Encryption related utilities.
+- [x] [`encoding`](./pkg/encoding/): Encoding related utilities.
+- [x] [`network`](./pkg/network/): Networking related utilities.
+- [x] [`limiter`](./pkg/limiter/): Rate limiter.
+- [x] [`re`](./pkg/re/): Pre coded regular expressions.
+- [x] [`mail`](./pkg/mail/): Mail client.
+- [x] [`algorithms`](./pkg/algorithms/): Algorithm implementations.
+- [x] [`pinger`](./pkg/pinger/): Ping utility.
+- [x] [`pointer`](./pkg/pointer/): Pointer utilities.
+- [x] [`mysql`](./pkg/mysql/): MySQL related code references.
+- [ ] [`mongodb`](.): MongoDB related code references.
+- [ ] [`redis`](.): Redis related code references.
+- [ ] [`k8s`](.): Kubernetes related code references.
+- [ ] [`cert`](.): x509 Certificates.
+
+`/internal`
+
+Code snippets for references
+
+- [x] [`enum`](./internal/enum/): Idiomatic reference to implement an enumerated type.
+- [x] [`flagx`](./internal/flagx): Native flag reference.
+- [x] [`grpc`](./internal/grpc/): A simple example of gRPC in Go.
