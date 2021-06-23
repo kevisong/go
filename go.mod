@@ -19,6 +19,8 @@ require (
 	github.com/tietang/go-utils v0.1.3
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
+	google.golang.org/grpc v1.38.0
+	google.golang.org/grpc/examples v0.0.0-20210622215705-4440c3b8306d
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gorm.io/driver/mysql v1.0.5

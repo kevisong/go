@@ -3,7 +3,7 @@ package wecom
 import (
 	"encoding/json"
 
-	"github.com/KEVISONG/go/common/http"
+	"github.com/KEVISONG/go/pkg/http"
 )
 
 // Robot interface

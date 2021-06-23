@@ -4,8 +4,8 @@ import (
 	"math"
 	"sync"
 
-	"github.com/KEVISONG/go/common/algorithms/tfidf/tokenizer"
-	"github.com/KEVISONG/go/common/algorithms/tfidf/utils"
+	"github.com/KEVISONG/go/pkg/algorithms/tfidf/tokenizer"
+	"github.com/KEVISONG/go/pkg/algorithms/tfidf/utils"
 )
 
 // TFIDF defines TFIDF
