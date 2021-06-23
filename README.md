@@ -2,7 +2,7 @@
 
 > Go codebase that keeps going
 
-`pkg`
+## `pkg`
 
 Out of the box code utilites for importing and using.
 
@@ -27,7 +27,7 @@ Out of the box code utilites for importing and using.
 - [ ] [`k8s`](.): Kubernetes related code references.
 - [ ] [`cert`](.): x509 Certificates.
 
-`/internal`
+## `/internal`
 
 Code snippets for references
 
