@@ -34,3 +34,4 @@ Code snippets for references
 - [x] [`enum`](./internal/enum/): Idiomatic reference to implement an enumerated type.
 - [x] [`flagx`](./internal/flagx): Native flag reference.
 - [x] [`grpc`](./internal/grpc/): A simple example of gRPC in Go.
+- [x] [`config`](.): Configuration snippet.
