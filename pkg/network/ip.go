@@ -2,9 +2,13 @@ package network
 
 import (
 	"encoding/json"
+	"errors"
+	"fmt"
 	"io/ioutil"
 	"net"
 	"net/http"
+
+	log "github.com/sirupsen/logrus"
 )
 
 // IPInfo defines ip information
@@ -42,7 +46,32 @@ func GetPublicIPInfo() (IPInfo, error) {
 
 }
 
-// GetIPAddrs gets private ip information from net interface
+// GetIPAddrs gets private ip addresses
 func GetIPAddrs() ([]net.Addr, error) {
 	return net.InterfaceAddrs()
+}
+
+// GetIPAddrsAsString gets private ip addresses as string
+func GetIPAddrsAsString() ([]string, error) {
+
+	interfaceAddr, err := net.InterfaceAddrs()
+	if err != nil {
+		errMsg := fmt.Sprintf("net.InterfaceAddrs() failed, error: %s", err)
+		log.Error(errMsg)
+		return nil, errors.New(errMsg)
+	}
+
+	ips := []string{}
+
+	for _, address := range interfaceAddr {
+		ipNet, isValidIPNet := address.(*net.IPNet)
+		if isValidIPNet && !ipNet.IP.IsLoopback() {
+			if ipNet.IP.To4() != nil {
+				ips = append(ips, ipNet.IP.String())
+			}
+		}
+	}
+
+	return ips, nil
+
 }
