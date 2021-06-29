@@ -22,6 +22,7 @@ Out of the box code utilites for importing and using.
 - [x] [`pinger`](./pkg/pinger/): Ping utility.
 - [x] [`pointer`](./pkg/pointer/): Pointer utilities.
 - [x] [`mysql`](./pkg/mysql/): MySQL related code references.
+- [x] [`uuid`](./pkg/uuid): UUID generator based on Sonyflake.
 - [ ] [`mongodb`](.): MongoDB related code references.
 - [ ] [`redis`](.): Redis related code references.
 - [ ] [`k8s`](.): Kubernetes related code references.
