@@ -5,6 +5,7 @@ go 1.15
 require (
 	github.com/Shopify/sarama v1.27.2
 	github.com/go-ping/ping v0.0.0-20210216210419-25d1413fb7bb
+	github.com/go-sql-driver/mysql v1.5.0
 	github.com/jonboulle/clockwork v0.2.2 // indirect
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.4 // indirect
@@ -16,6 +17,7 @@ require (
 	github.com/onsi/gomega v1.13.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sirupsen/logrus v1.7.0
+	github.com/sony/sonyflake v1.0.0
 	github.com/tietang/go-utils v0.1.3
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
@@ -23,6 +25,8 @@ require (
 	google.golang.org/grpc/examples v0.0.0-20210622215705-4440c3b8306d
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
+	gopkg.in/yaml.v2 v2.4.0
 	gorm.io/driver/mysql v1.0.5
 	gorm.io/gorm v1.21.3
+	xorm.io/xorm v1.1.0
 )
