@@ -36,3 +36,4 @@ Code snippets for references
 - [x] [`flagx`](./internal/flagx): Native flag reference.
 - [x] [`grpc`](./internal/grpc/): A simple example of gRPC in Go.
 - [x] [`config`](./internal/config/): Configuration snippet.
+- [x] [`debug`](./internal/debug/): Debug server.

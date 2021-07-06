@@ -15,7 +15,7 @@ type C struct {
 	Log log.Config `json:"log" yaml:"log"`
 }
 
-var defaultconfigPath = "./config.yml"
+var defaultConfigFile = "./config.yml"
 
 // DefaultConfig is default configuration
 var Config C
@@ -37,17 +37,17 @@ func (c *C) ToString() (string, error) {
 }
 
 // LoadConfig loads configuration from file
-func LoadConfig(configPath string, config *C) error {
-	configContent, err := ioutil.ReadFile(configPath)
+func LoadConfig(configFile string, config *C) error {
+	configContent, err := ioutil.ReadFile(configFile)
 	if err != nil {
-		errMsg := fmt.Sprintf("ioutil.ReadFile(%s) failed, error: %s", configPath, err)
+		errMsg := fmt.Sprintf("ioutil.ReadFile(%s) failed, error: %s", configFile, err)
 		logrus.Error(errMsg)
 		return errors.New(errMsg)
 	}
 
 	err = yaml.Unmarshal(configContent, &config)
 	if err != nil {
-		errMsg := fmt.Sprintf("yaml.Unmarshal %s failed, error: %s", configPath, err)
+		errMsg := fmt.Sprintf("yaml.Unmarshal %s failed, error: %s", configFile, err)
 		logrus.Error(errMsg)
 		return errors.New(errMsg)
 	}
@@ -55,17 +55,17 @@ func LoadConfig(configPath string, config *C) error {
 }
 
 // InitConfig inits configuration
-func InitConfig(configPath string) error {
+func InitConfig(configFile string) error {
 
-	if configPath == "" {
-		configPath = defaultconfigPath
+	if configFile == "" {
+		configFile = defaultConfigFile
 	}
 
 	Config = C{}
 
-	err := LoadConfig(configPath, &Config)
+	err := LoadConfig(configFile, &Config)
 	if err != nil {
-		errMsg := fmt.Sprintf("LoadConfig(%s) failed, error: %s", configPath, err)
+		errMsg := fmt.Sprintf("LoadConfig(%s) failed, error: %s", configFile, err)
 		logrus.Error(errMsg)
 		return errors.New(errMsg)
 	}
