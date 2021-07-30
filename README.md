@@ -26,6 +26,7 @@ Out of the box code utilites for importing and using.
 - [x] [`uuid`](./pkg/uuid): UUID generator based on Sonyflake.
 - [ ] [`mongodb`](.): MongoDB related code references.
 - [ ] [`redis`](.): Redis related code references.
+- [ ] [`docker`](.): Docker related code references.
 - [ ] [`k8s`](.): Kubernetes related code references.
 - [ ] [`cert`](.): x509 Certificates.
 
