@@ -20,8 +20,8 @@ func MD5Sum(reader io.Reader) (string, error) {
 	return hex.EncodeToString(hashInBytes), nil
 }
 
-// MD5SumSumString calculates the MD5 of a string
-func MD5SumSumString(input string) (string, error) {
+// MD5SumString calculates the MD5 of a string
+func MD5SumString(input string) (string, error) {
 	buffer := strings.NewReader(input)
 	return MD5Sum(buffer)
 }
