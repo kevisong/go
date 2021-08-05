@@ -46,3 +46,6 @@ func GetIPv6(str string) []string {
 func GetDomain(str string) []string {
 	return regexDomain.FindAllString(str, -1)
 }
+
+// MatchBetween TODO
+func MatchBetween() {}
