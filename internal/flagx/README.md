@@ -1,3 +1,6 @@
 # flagx
 
-A simple native flag usage reference.
+`flag` usage reference.
+
+- `flag`
+- `github.com/urfave/cli`
