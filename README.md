@@ -19,7 +19,6 @@ Out of the box code utilites for importing and using.
 - [x] [`re`](./pkg/re/): Pre coded regular expressions.
 - [x] [`mail`](./pkg/mail/): Mail client.
 - [x] [`algorithms`](./pkg/algorithms/): Algorithm implementations.
-- [ ] [`data-structure`](.): Data structure.
 - [x] [`pinger`](./pkg/pinger/): Ping utility.
 - [x] [`pointer`](./pkg/pointer/): Pointer utilities.
 - [x] [`mysql`](./pkg/mysql/): MySQL related code references using gorm and xorm.
@@ -40,3 +39,4 @@ Code snippets for references
 - [x] [`config`](./internal/config/): Configuration snippet.
 - [x] [`debug`](./internal/debug/): Debug server.
 - [ ] [`design-patterns](.): Design Patterns implemented in Go.
+- [ ] [`data-structure`](.): Data structure.
