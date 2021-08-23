@@ -40,3 +40,5 @@ Code snippets for references
 - [x] [`debug`](./internal/debug/): Debug server.
 - [ ] [`design-patterns](.): Design Patterns implemented in Go.
 - [ ] [`data-structure`](.): Data structure.
+- [ ] [`embedded script`](.): Embedded script lib
+
