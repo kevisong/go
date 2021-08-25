@@ -4,7 +4,7 @@
 
 ## `pkg`
 
-Out of the box code utilites for importing and using.
+Out of the box code utilites for instant using.
 
 - [x] [`http`](./pkg/http/): A simple http requester.
 - [x] [`log`](./pkg/log/): A logrus initiator.
@@ -31,14 +31,13 @@ Out of the box code utilites for importing and using.
 
 ## `/internal`
 
-Code snippets for references
+Code snippets for usage references.
 
 - [x] [`enum`](./internal/enum/): Idiomatic reference to implement an enumerated type.
 - [x] [`flagx`](./internal/flagx): Native flag reference.
 - [x] [`grpc`](./internal/grpc/): A simple example of gRPC in Go.
 - [x] [`config`](./internal/config/): Configuration snippet.
 - [x] [`debug`](./internal/debug/): Debug server.
+- [ ] [`embedded-script`](./internal/embedded-script/): Embedded script lib
 - [ ] [`design-patterns](.): Design Patterns implemented in Go.
 - [ ] [`data-structure`](.): Data structure.
-- [ ] [`embedded script`](.): Embedded script lib
-
