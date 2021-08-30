@@ -38,6 +38,6 @@ Code snippets for usage references.
 - [x] [`grpc`](./internal/grpc/): A simple example of gRPC in Go.
 - [x] [`config`](./internal/config/): Configuration snippet.
 - [x] [`debug`](./internal/debug/): Debug server.
-- [ ] [`embedded-script`](./internal/embedded-script/): Embedded script lib
+- [x] [`embedded-script`](./internal/embedded-script/): Embedded script lib
 - [ ] [`design-patterns](.): Design Patterns implemented in Go.
 - [ ] [`data-structure`](.): Data structure.
