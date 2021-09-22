@@ -27,7 +27,7 @@ Out of the box code utilites for instant using.
 - [ ] [`redis`](.): Redis related code references.
 - [ ] [`docker`](.): Docker related code references.
 - [ ] [`k8s`](.): Kubernetes related code references.
-- [ ] [`cert`](.): x509 Certificates.
+- [ ] [`x509-cert`](.): x509 Certificates.
 - [ ] [`docker`](.): Docker.
 
 ## `/internal`
