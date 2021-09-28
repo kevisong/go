@@ -28,7 +28,7 @@ Out of the box code utilites for instant using.
 - [ ] [`docker`](.): Docker related code references.
 - [ ] [`k8s`](.): Kubernetes related code references.
 - [ ] [`x509-cert`](.): x509 Certificates.
-- [ ] [`container`](.): Container management.
+- [ ] [`container`](./pkg/container/): Container management.
 
 ## `/internal`
 
