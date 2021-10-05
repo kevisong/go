@@ -12,6 +12,17 @@ import "fmt"
 //  │   Subject   │              │   Observer   │
 //  │             │<─────────────│              │
 //  ╰─────────────╯   Register   ╰──────────────╯
+//
+// Observer pattern is different from Publish–subscribe pattern as
+// publish–subscribe is a messaging pattern that focus on how two
+// different parts of an application, or different systems connect
+// and communicate with each other.
+//
+// ╭─────────────╮                 ╭───────────────╮   Fire Event   ╭──────────────╮
+// │             │  Publish Event  │               │───────────────>│              │
+// │  Publisher  │────────────────>│ Event Channel │                │  Subscriber  │
+// │             │                 │               │<───────────────│              │
+// ╰─────────────╯                 ╰───────────────╯    Subscribe   ╰──────────────╯
 
 type Subject interface {
 	Register(Observer)
