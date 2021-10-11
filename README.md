@@ -40,5 +40,6 @@ Code snippets for usage references.
 - [x] [`config`](./internal/config/): Configuration snippet.
 - [x] [`debug`](./internal/debug/): Debug server.
 - [x] [`embedded-script`](./internal/embedded-script/): Embedded script lib
+- [x] [`psutil`](./internal/psutil): Process and system utilities
 - [ ] [`design-patterns](.): Design Patterns implemented in Go.
 - [ ] [`data-structure`](.): Data structure.
