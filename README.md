@@ -43,3 +43,4 @@ Code snippets for usage references.
 - [x] [`psutil`](./internal/psutil): Process and system utilities
 - [ ] [`design-patterns`](./internal/design-patterns/): Design Patterns implemented in Go.
 - [ ] [`data-structure`](.): Data structure.
+- [ ] [`cmd`](.): CMD exec example.
