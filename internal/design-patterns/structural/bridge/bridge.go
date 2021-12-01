@@ -1,5 +1,7 @@
 package bridge
 
+// Bridge pattern decouples an abstraction from its implementation so that the two can vary independently.
+
 type ISender interface {
 	Send(msg string) error
 }
