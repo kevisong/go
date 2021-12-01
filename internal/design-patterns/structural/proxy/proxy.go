@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+// Use of the proxy can simply be forwarding to the real object, or can provide additional logic.
+
 type IUser interface {
 	Login(username, password string) error
 }
