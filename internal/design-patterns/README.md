@@ -1,3 +1,13 @@
 # Design Patterns
 
-// TODO
+## Structural
+
+//TODO
+
+## Creational
+
+//TODO
+
+## Behavioral
+
+//TODO
