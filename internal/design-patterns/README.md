@@ -2,7 +2,13 @@
 
 ## Structural
 
-//TODO
+- [Adapter](./structural/adapter/adapter.go)
+- [Bridge](./structural/bridge/bridge.go)
+- [Composite](./structural/composite/composite.go)
+- [Decorator](./structural/decorator/decorator.go)
+- [Proxy](./structural/proxy/proxy.go)
+- [Facade](./structural/facade/facade.go)
+- [Flyweight](./structural/flyweight/flyweight.go)
 
 ## Creational
 
