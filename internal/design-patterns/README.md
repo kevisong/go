@@ -12,7 +12,10 @@
 
 ## Creational
 
-//TODO
+- [builder](./creational/builder/builder.go)
+- [factory](./creational/factory/factory.go)
+- [prototype](./creational/prototype/prototype.go)
+- [singleton](./creational/singleton/singleton.go)
 
 ## Behavioral
 
