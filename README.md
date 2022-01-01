@@ -1,7 +1,5 @@
 # go
 
-> Go codebase that keeps going
-
 ## `pkg`
 
 Out of the box code utilites for instant using.
