@@ -21,7 +21,7 @@ Out of the box code utilites for instant using.
 - [x] [`pointer`](./pkg/pointer/): Pointer utilities.
 - [x] [`mysql`](./pkg/mysql/): MySQL related code references using gorm and xorm.
 - [x] [`uuid`](./pkg/uuid): UUID generator based on Sonyflake.
-- [ ] [`mongodb`](.): MongoDB related code references.
+- [ ] [`mongodb`](./pkg/mongodb/): MongoDB related code references.
 - [ ] [`redis`](.): Redis related code references.
 - [ ] [`docker`](.): Docker related code references.
 - [ ] [`k8s`](.): Kubernetes related code references.
