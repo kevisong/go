@@ -43,3 +43,4 @@ Code snippets for references.
 - [ ] [`data-structure`](.): Data structure.
 - [ ] [`psutil`](./internal/psutil): Process and system utilities based on [gopsutil](https://github.com/shirou/gopsutil)
 - [ ] [`cmd`](.): CMD exec example.
+- [ ] [`generic`](.): generic implementation.
