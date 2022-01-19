@@ -22,7 +22,7 @@ Out of the box code utilites for instant using.
 - [x] [`mysql`](./pkg/mysql/): MySQL related code references using gorm and xorm.
 - [x] [`uuid`](./pkg/uuid): UUID generator based on Sonyflake.
 - [ ] [`mongodb`](./pkg/mongodb/): MongoDB related code references.
-- [ ] [`redis`](.): Redis related code references.
+- [ ] [`redis`](./pkg/redis/): Redis related code references.
 - [ ] [`docker`](.): Docker related code references.
 - [ ] [`k8s`](.): Kubernetes related code references.
 - [ ] [`x509-cert`](.): x509 Certificates.
