@@ -2,7 +2,7 @@
 
 ## `pkg`
 
-Out of the box code utilites for instant using.
+Out of the box code utilites.
 
 - [x] [`http`](./pkg/http/): A simple http requester.
 - [x] [`log`](./pkg/log/): A logrus initiator.
