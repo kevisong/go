@@ -1,3 +1,3 @@
 # Algorithms
 
-- [ ] [TF-IDF](./tfidf/)
+- [x] [TF-IDF](./tfidf/)
