@@ -28,7 +28,7 @@ Out of the box code utilites.
 - [ ] [`x509-cert`](./pkg/x509-cert/): x509 Certificates.
 - [ ] [`container`](./pkg/container/): Container management.
 - [ ] [`starlark`](.): The Starlark configuration language, implemented in Go.
-- [ ] [`openssl`](.)
+- [ ] [`openssl`](.): x509 cert signing codes.
 
 ## `/internal`
 
