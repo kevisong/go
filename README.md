@@ -24,7 +24,7 @@ Out of the box code utilites.
 - [ ] [`mongodb`](./pkg/mongodb/): MongoDB related code references.
 - [ ] [`redis`](./pkg/redis/): Redis related code references.
 - [ ] [`docker`](./pkg/docker/): Docker related code references.
-- [ ] [`k8s`](./pkg/k8s/): Kubernetes related code references.
+- [ ] [`kubernetes`](./pkg/kubernetes/): Kubernetes related code references.
 - [ ] [`container`](./pkg/container/): Container management.
 - [ ] [`starlark`](.): The Starlark configuration language, implemented in Go.
 - [ ] [`openssl`](.): x509 cert signing codes.
