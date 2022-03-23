@@ -1,5 +1,7 @@
 # Kubernetes
 
-codebase for [client-go](https://github.com/kubernetes/client-go)
+codebase for Kubernetes
 
 //TODO
+
+- [client-go](https://github.com/kubernetes/client-go)
