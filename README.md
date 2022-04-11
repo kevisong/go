@@ -40,7 +40,7 @@ Code snippets for references.
 - [x] [`debug`](./internal/debug/): Debug server.
 - [x] [`embedded-script`](./internal/embedded-script/): Embedded script lib
 - [x] [`design-patterns`](./internal/design-patterns/): Design Patterns implemented in Go.
-- [ ] [`data-structure`](.): Data structure.
+- [ ] [`data-structures`](./internal/data-structures/): Data structures.
 - [ ] [`psutil`](./internal/psutil/): Process and system utilities based on [gopsutil](https://github.com/shirou/gopsutil)
 - [ ] [`cmdx`](./internal/cmdx/): CMD exec example.
 - [ ] [`generic`](.): generic implementation.
