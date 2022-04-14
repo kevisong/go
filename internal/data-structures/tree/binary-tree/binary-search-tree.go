@@ -83,21 +83,22 @@ func PostOrderTraverseRecurive(node *Node) []int {
 	return arr
 }
 
-func InOrderTraverseIterativeClean(node *Node) []int {
-	// TODO: impl
+func PostOrderTraverseIterative(node *Node) []int {
+	prev := node
 	arr := make([]int, 0)
 	stack := make([]*Node, 0)
+	stack = append(stack, node)
 	for len(stack) > 0 {
-		if node != nil {
-			stack = append(stack, node)
-
+		node := stack[len(stack)-1]
+		if node.left != nil && node.left != prev && node.right != prev {
+			stack = append(stack, node.left)
+		} else if node.right != nil && node.right != prev {
+			stack = append(stack, node.right)
+		} else {
+			prev = node
+			arr = append(arr, stack[len(stack)-1].value)
+			stack = stack[:len(stack)-1]
 		}
 	}
-	return arr
-}
-
-func PostOrderTraverseIterative(node *Node) []int {
-	// TODO: impl
-	arr := make([]int, 0)
 	return arr
 }
