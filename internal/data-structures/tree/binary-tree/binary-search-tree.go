@@ -83,21 +83,46 @@ func PostOrderTraverseRecurive(node *Node) []int {
 	return arr
 }
 
-func PostOrderTraverseIterative(node *Node) []int {
-	prev := node
+func POT(node *Node) []int {
+	if node == nil {
+		return []int{}
+	}
 	arr := make([]int, 0)
 	stack := make([]*Node, 0)
-	stack = append(stack, node)
 	for len(stack) > 0 {
-		node := stack[len(stack)-1]
-		if node.left != nil && node.left != prev && node.right != prev {
+		if node.left != nil {
 			stack = append(stack, node.left)
-		} else if node.right != nil && node.right != prev {
+			node = node.left
+		} else if node.right != nil {
 			stack = append(stack, node.right)
+			node = node.right
 		} else {
-			prev = node
-			arr = append(arr, stack[len(stack)-1].value)
+			top := stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
+			arr = append(arr, top.value)
+		}
+	}
+	return arr
+}
+
+func PostOrderTraverseIterative(node *Node) []int {
+	if node == nil {
+		return []int{}
+	}
+	last := node
+	arr := make([]int, 0)
+	stack := make([]*Node, 0)
+	stack = append(stack, node) // push()
+	for len(stack) > 0 {
+		node := stack[len(stack)-1] // top()
+		if node.left != nil && node.left != last && node.right != last {
+			stack = append(stack, node.left) // push()
+		} else if node.right != nil && node.right != last {
+			stack = append(stack, node.right) // push()
+		} else {
+			last = node
+			arr = append(arr, stack[len(stack)-1].value)
+			stack = stack[:len(stack)-1] // pop()
 		}
 	}
 	return arr
