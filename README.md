@@ -45,3 +45,4 @@ Code snippets for references.
 - [ ] [`cmdx`](./internal/cmdx/): CMD exec example.
 - [ ] [`generic`](.): generic implementation.
 - [ ] [`client`](.): idiomatic way of implementing a client sdk.
+- [ ] [`discord`](.): TODO
