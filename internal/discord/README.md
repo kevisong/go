@@ -1,1 +1,3 @@
 # discord
+
+Discord bot utilities.
