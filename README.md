@@ -19,8 +19,8 @@ Out of the box code utilites.
 - [x] [`algorithms`](./pkg/algorithms/): Algorithm implementations.
 - [x] [`pinger`](./pkg/pinger/): Ping utility.
 - [x] [`pointer`](./pkg/pointer/): Pointer utilities.
-- [x] [`mysql`](./pkg/mysql/): MySQL related code references using gorm and xorm.
 - [x] [`uuid`](./pkg/uuid): UUID generator based on Sonyflake.
+- [x] [`mysql`](./pkg/mysql/): MySQL related code references using gorm and xorm.
 - [ ] [`mongodb`](./pkg/mongodb/): MongoDB related code references.
 - [ ] [`redis`](./pkg/redis/): Redis related code references.
 - [ ] [`docker`](./pkg/docker/): Docker related code references.
