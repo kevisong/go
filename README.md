@@ -44,5 +44,4 @@ Code snippets for references.
 - [ ] [`psutil`](./internal/psutil/): Process and system utilities based on [gopsutil](https://github.com/shirou/gopsutil)
 - [ ] [`cmdx`](./internal/cmdx/): CMD exec example.
 - [ ] [`generic`](.): generic implementation.
-- [ ] [`client`](.): idiomatic way of implementing a client sdk.
 - [ ] [`discord`](.): Discord bots based on [https://discord.com/developers/docs/intro](https://discord.com/developers/docs/intro).
